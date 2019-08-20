@@ -1,5 +1,7 @@
 # version
+#
 一行代码更新App 安装
+#
     public void checkUpdata() {
         AllenVersionChecker
                 .getInstance()
