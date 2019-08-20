@@ -9,6 +9,12 @@
     tools:context="com.mhy.version.MainActivity">
     <Button
         android:layout_width="match_parent"
+        android:id="@+id/btn_v0"
+        android:onClick="mainOnClick"
+        android:text="直接使用一行代码更新下载"
+        android:layout_height="wrap_content" />
+    <Button
+        android:layout_width="match_parent"
         android:id="@+id/btn_v1"
         android:onClick="mainOnClick"
         android:text="V1版（配置复杂，存在一定的内存泄漏）"
