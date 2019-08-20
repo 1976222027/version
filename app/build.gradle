@@ -29,4 +29,5 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     implementation project(path: ':versionlib')
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.6.3'
+    implementation 'com.squareup.okhttp3:okhttp:4.0.0'
 }
