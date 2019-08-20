@@ -3,12 +3,26 @@
     package="com.mhy.version">
 
     <application
+        android:name=".MyApplication"
         android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".v1.V1Activity">
+
+        </activity>
+
+        <service
+            android:name=".v1.DemoService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity
+            android:name=".v1.CustomVersionDialogActivity"
+            android:launchMode="singleTask"
+            android:theme="@style/versionCheckLibvtransparentTheme" />
+        <activity android:name=".v2.V2Activity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -17,5 +31,4 @@
             </intent-filter>
         </activity>
     </application>
-
 </manifest>

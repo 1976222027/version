@@ -1,11 +1,12 @@
 package com.mhy.version;
 
+import android.content.Intent;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
+import android.view.View;
 
-import com.mhy.versionlib.v2.AllenVersionChecker;
-import com.mhy.versionlib.v2.builder.UIData;
+import com.mhy.version.v1.V1Activity;
+import com.mhy.version.v2.V2Activity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -13,17 +14,20 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        checkUpdata();
     }
-    public void checkUpdata() {
-        AllenVersionChecker
-                .getInstance()
-                .downloadOnly(UIData.create()
-                        .setDownloadUrl("https//:www.github.com/1976222027/version/app/release/app_release.apk")//"apk下载地址"
-                        .setTitle("版本更新")
-                        .setContent("点击下载新版本")
-                ).executeMission(MainActivity.this);
 
+    public void mainOnClick(View view) {
+        Intent intent;
+        switch (view.getId()) {
+            case R.id.btn_v1:
+                intent = new Intent(this, V1Activity.class);
+                startActivity(intent);
+                break;
+            case R.id.btn_v2:
+                intent = new Intent(this, V2Activity.class);
+                startActivity(intent);
 
+                break;
+        }
     }
 }
